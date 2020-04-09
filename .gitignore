@@ -1,0 +1,6 @@
+.idea
+db.sqlite3
+private_keys
+migrations
+opPlatform/__pycache__
+operation_platform/__pycache__
