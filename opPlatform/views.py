@@ -175,7 +175,9 @@ class SiteView(View):
             return JsonResponse({'status': 500, 'message': '非法操作'})
         site_dict = {'site_name': site_name, 'site_remarks': site_remarks, 'site_tags': site_tags}
         if action == 'add':
+            site_auth = request.POST.get('auth')
             site_dict['site_url'] = site_url
+            site_dict['auth'] = site_auth
             try:
                 SiteUrl.objects.create(**site_dict)
                 logger.info('添加site {} 成功'.format(site_url))
